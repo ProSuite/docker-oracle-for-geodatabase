@@ -1,0 +1,41 @@
+# 
+# extproc.ora is used by extproc in the default Oracle configuration.
+#
+# This is a sample extproc init file that contains a name-value(s) pair which
+# is same as the value of ENVS parameter in listener.ora file.
+#
+# Syntax: SET name=value (environment variable name and value)
+# 
+# When specifying the EXTPROC_DLLS environment variable to restrict the DLLs 
+# that extproc is allowed to load, you may set EXTPROC_DLLS to one of the 
+# following values:
+# 
+# * ONLY (maximum security) 
+#
+#   When EXTPROC_DLLS=ONLY:DLL[:DLL], only the specified DLL(s) can be loaded.
+# 
+#   Syntax: SET EXTPROC_DLLS=ONLY:DLL[:DLL]
+#
+# * NULL (the default value)
+#
+#   When EXTPROC_DLLS is not set, only the DLL(s) in $ORACLE_HOME/bin and 
+#   ORACLE_HOME/lib can be loaded.
+#
+# * Colon-seperated list of the DLLs
+#
+#   When EXTPROC_DLLS=DLL[:DLL], the specified DLL(s) and the DLLs in 
+#   $ORACLE_HOME/bin and ORACLE_HOME/lib can be loaded.
+# 
+#   Syntax: SET EXTPROC_DLLS=DLL:DLL
+#
+# * ANY 
+#   When EXTPROC_DLLS=ANY, DLL checking is disabled.
+# 
+#   Syntax: SET EXTPROC_DLLS=ANY
+#
+#
+# To turn extproc tracing on, set TRACE_LEVEL=ON (default is OFF).
+#
+#   Syntax: TRACE_LEVEL=ON
+#
+SET EXTPROC_DLLS=ONLY:/opt/oracle/esrilib/libst_shapelib.so
