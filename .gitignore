@@ -2,3 +2,4 @@
 *.sde
 *.ecp
 /var
+libst_shapelib.so
