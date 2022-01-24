@@ -81,17 +81,17 @@ All the parameters and options of the oracle image are still available. For exam
 
 ### Create the Geodatabase
 
-Make sure to add the tnsnames.ora entry that points to the pluggalbe database ($pdb or EGDB in our example):
-
-`EGDB =`
-`(DESCRIPTION =`
-  `(ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521))`
-  `(CONNECT_DATA =`
-    `(SERVER = DEDICATED)`
-    `(SERVICE_NAME = EGDB)`
-  `)`
-`)`
-
+Make sure to add the tnsnames.ora entry of your host's oracle client that points to the pluggable database (EGDB in our example):
+```sh
+EGDB =
+(DESCRIPTION =
+  (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521))
+  (CONNECT_DATA =
+    (SERVER = DEDICATED)
+    (SERVICE_NAME = EGDB)
+  )
+)
+```
 Once the database is up and running (it will take a few minutes) the geodatabase can be created. If ArcGIS Server is installed the following statement should work directly. Otherwise review the location of the python installation and the keycodes directory in the Create-Geodatabase script.
 
 ```sh
@@ -119,3 +119,4 @@ sqlplus sys/system@$pdb as sysdba
 ## Contributions and Acknowledgements
 
 A big thanks goes to Daniel Roth who started this initiative and worked through most of the technical challenges!
+
