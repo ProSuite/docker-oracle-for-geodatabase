@@ -49,10 +49,10 @@ else {
 }
 
 # Create var directory, if it does not exist
-md -Force .\var
+mkdir -Force .\var
 
 # Copy the authorization file from the server installation and rename it by adding .ecp (!)
-cp $KeycodeFileDir\keycodes .\var\keycodes.ecp
+Copy-Item $KeycodeFileDir\keycodes .\var\keycodes.ecp
 $sdeAuthorizationFile = "$(Get-Location)\var\keycodes.ecp"
 
 Write-Output "creating enterprise geodatabase..." | timestamp
@@ -72,7 +72,7 @@ Start-Process $python -ArgumentList ".\arcpy\compress.py", $sdeFilesFolder, $sde
 Write-Output "sucessfully compressed" | timestamp
 
 # Create log directory, if it does not exist
-md -Force .\var\logs
+mkdir -Force .\var\logs
 
 # oracle configuration parameters optimized for SDE:
 sqlplus sys/${SysPassword}@${TnsName} as sysdba "@.\sql\alter_system_parameters.sql"
