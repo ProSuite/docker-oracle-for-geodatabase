@@ -7,7 +7,7 @@
 ---	______________________________________________________
 
 SET TERMOUT OFF
-SPOOL .\var\logs\configure_shapelib.log
+SPOOL .\var\logs\alter_system_parameters.log
 SET HEADING OFF
 SELECT TO_CHAR(SYSDATE, 'fmMonth DD, YYYY') TODAY FROM DUAL;
 SET HEADING ON
