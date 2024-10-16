@@ -18,7 +18,7 @@
 
 param (
     $OracleDbImage = "container-registry.oracle.com/database/express:18.4.0.0",
-	$ShapelibDir = "C:\Program Files\ArcGIS\Server\DatabaseSupport\Oracle\Linux64",
+    $ShapelibDir = "C:\Program Files\ArcGIS\Server\DatabaseSupport\Oracle\Linux64",
     $OutputImageName = "oracle-ee-for-sde"
 )
 

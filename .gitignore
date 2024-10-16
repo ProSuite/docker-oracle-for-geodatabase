@@ -2,4 +2,6 @@
 *.sde
 *.ecp
 /var
+# Avoid committing st_shapelib
 libst_shapelib.so
+st_shapelib.dll

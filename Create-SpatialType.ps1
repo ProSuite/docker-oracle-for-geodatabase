@@ -16,7 +16,7 @@
 
 param (
     $TnsName =  $(throw "The TNS name is required. Make sure it is in the oracle client's tnsnames.ora"),
-	$SysPassword = "The password of the sys user is required."
+    $SysPassword = "The password of the sys user is required."
 )
 
 # The sde user's initial password:
@@ -46,7 +46,7 @@ else {
 }
 
 # Create var directory, if it does not exist
-md -Force .\var
+mkdir -Force .\var
 
 $sdeFilesFolder = "$(Get-Location)\var\"
 $sdeConnectionFileName = "${TnsName}_sys.sde"
@@ -59,7 +59,7 @@ Write-Output "creating spatial type..." | timestamp
 Start-Process $python -ArgumentList ".\arcpy\create_spatial_type.py", $sdeFilePath, $sdePassword -Wait
 
 # Create log directory, if it does not exist
-md -Force .\var\logs
+mkdir -Force .\var\logs
 
 # oracle configuration parameters optimized for SDE:
 sqlplus sys/${SysPassword}@${TnsName} as sysdba "@.\sql\alter_system_parameters.sql"

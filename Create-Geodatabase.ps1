@@ -17,7 +17,7 @@
 # .\Create-Geodatabase.ps1 -TnsName EGDB -SysPassword system
 param (
     [string] $TnsName = $(throw "The TNS name is required. Make sure it is in the oracle client's tnsnames.ora"),
-	[string] $SysPassword = $(throw "The password of the sys user is required."),
+    [string] $SysPassword = $(throw "The password of the sys user is required."),
     [string] $KeycodeFileDir = "C:\Program Files\ESRI\License10.8\sysgen"
 )
 
