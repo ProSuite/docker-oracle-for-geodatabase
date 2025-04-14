@@ -1,3 +1,6 @@
+> **📢 Important:** This is now legacy, but the code lives on:
+> Please go to https://github.com/ProSuite/geodatabase-containers
+
 # docker-oracle-for-geodatabase
 
 Create an Esri geodatabase in Docker based on an Oracle Docker image using PowerShell. The created geodatabases support SQL access using Esri's ST_Geometry SQL functions thanks to the ST_SHAPELIB library included in the created image.
